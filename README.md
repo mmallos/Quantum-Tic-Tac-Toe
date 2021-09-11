@@ -1,4 +1,4 @@
-#Quantum Tic-Tac-Toe 
+# Quantum Tic-Tac-Toe 
 by Matthew Mallos
 
 Student ID: ########
