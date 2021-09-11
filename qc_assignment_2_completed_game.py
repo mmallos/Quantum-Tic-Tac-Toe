@@ -24,24 +24,32 @@ def resetBoard(): #Reset board sets all dictionary values to 0 and ''
 ##Print the Board
 def printBoard(board):
   print()
-  colour = 0 #Variable to record colour to print
+  cross_colour = 0
+  naught_colour = 0
   for i in range (1,10):
     if board[str(i)][1] == 0:
       cprint(board[str(i)][0], end='')
     else:
-      if (colour == 0 or colour == 1): #First quantum move = red
-        cprint(board[str(i)][0], 'red', end='')
-        colour = colour + 1
-      elif (colour == 2 or colour == 3): #Second quantum move = green
-        cprint(board[str(i)][0], 'green', end='')
-        colour = colour + 1
-      elif (colour == 4 or colour == 5): #Second quantum move = blue
-        cprint(board[str(i)][0], 'blue', end='')
-        colour = colour + 1
-      elif (colour == 6 or colour == 7): #Second quantum move = yellow
-        cprint(board[str(i)][0], 'yellow', end='')
-        colour = colour + 1
-
+      if (board[str(i)][0] == 'X'):
+          if (cross_colour == 0 or cross_colour == 1):
+              cprint(board[str(i)][0], 'red', end='')
+              cross_colour = cross_colour + 1
+          elif (cross_colour == 2 or cross_colour == 3):
+              cprint(board[str(i)][0], 'green', end='')
+              cross_colour = cross_colour + 1
+          else:
+              cprint(board[str(i)][0], 'blue', end='')
+              cross_colour = cross_colour + 1   
+      else:
+         if (naught_colour  == 0 or naught_colour  == 1):
+              cprint(board[str(i)][0], 'magenta', end='')
+              naught_colour  = naught_colour  + 1
+         elif (naught_colour  == 2 or naught_colour  == 3):
+              cprint(board[str(i)][0], 'yellow', end='')
+              naught_colour  = naught_colour  + 1
+         else:
+              cprint(board[str(i)][0], 'cyan', end='')
+              naught_colour  = naught_colour  + 1             
     if i % 3 == 0: #Prints the boards gridlines
       print()
       if i != 9: 
